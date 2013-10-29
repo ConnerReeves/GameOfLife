@@ -17,6 +17,11 @@ describe('gameBoard', function() {
 	});
 
 	describe('#proceedGeneration', function() {
+		it('should return the new board after the generation has been proceeded', function() {
+			gameBoard.loadFromFile('spinnerBoard.txt');
+			gameBoard.proceedGeneration().should.be.a('object');
+		});
+
 		describe('#Examples', function() {
 			it('should return the correct next generation for all given examples', function() {
 				gameBoard.loadFromFile('spinnerBoard.txt');
