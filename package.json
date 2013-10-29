@@ -1,0 +1,25 @@
+{
+  "name": "GameOfLife",
+  "version": "0.0.0",
+  "description": "Submission for Rally's \"Game of Life\" challenge question.",
+  "main": "app.js",
+  "dependencies": {
+    "chai": "~1.8.1",
+    "lodash": "~2.2.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConnerReeves/GameOfLife.git"
+  },
+  "author": "Conner Reeves",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/ConnerReeves/GameOfLife/issues"
+  }
+}
