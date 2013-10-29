@@ -1,3 +1,4 @@
+![build_state](https://api.travis-ci.org/ConnerReeves/GameOfLife.png)
 Game of Life
 ============
 
