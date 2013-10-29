@@ -1,0 +1,8 @@
+Game of Life
+============
+
+Install dependencies using: "npm install"
+
+Run automated tests using "mocha" or "npm test"
+
+Compute generations of any game board file using: "node app 'fileName.txt' 'generationsToProcess (optional)'"
