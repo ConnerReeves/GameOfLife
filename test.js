@@ -23,7 +23,7 @@ describe('gameBoard', function() {
 		});
 
 		describe('#Examples', function() {
-			it('should return the correct next generation for all given examples', function() {
+			it('should return the correct second generation for all given examples', function() {
 				gameBoard.loadFromFile('spinnerBoard.txt');
 				gameBoard.proceedGeneration();
 				gameBoard.getBoard().should.eql([
