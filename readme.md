@@ -1,9 +1,13 @@
-![build_state](https://api.travis-ci.org/ConnerReeves/GameOfLife.png)
 Game of Life
-============
+===
 
-Install dependencies using: "npm install"
+![build_state](https://api.travis-ci.org/ConnerReeves/GameOfLife.png)
 
-Run automated tests using "mocha" or "npm test"
+Installation & Use
+---
+<code>npm install</code><br />
+<code>node app [GameBoardFile.txt] [GenerationCount (optional)]</code>
 
-Compute generations of any game board file using: "node app 'fileName.txt' 'generationsToProcess (optional)'"
+Testing
+---
+<code>npm test</code>
