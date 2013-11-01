@@ -7,18 +7,26 @@ var gameBoard = [];
 //Loads game board file into array format
 //Columns separated by single space, rows separated by new line
 exports.loadFromFile = function(fileName) {
-	var newBoard = _.map(fs.readFileSync(fileName).toString().split('\n'), function(row) {
+	try { var boardFile = fs.readFileSync(fileName);  }
+	catch(err) { throw new Error('File Load Failed'); }
+	var newBoard = _.map(boardFile.toString().split('\n'), function(row) {
 		return _.map(row.split(' '), function(stateString) {
 			return parseInt(stateString, 2);
 		});
 	});
-	if (newBoard.length > 0 && _.all(_.flatten(newBoard), function(val) {
-		return val === 0 || val === 1;
+	if (newBoard.length === 1 && newBoard[0].length === 1 && isNaN(newBoard[0][0])) {
+		throw new Error('Empty Board');
+	} else if (!_.all(_.flatten(newBoard), function(val) {
+		return val === 0 || val === 1; //All entries are valid
 	})) {
+		throw new Error('Invalid Entries')
+	} else if (!_.all(newBoard, function(row) {
+		return row.length === newBoard[0].length;
+	})) {
+		throw new Error('Invalid Dimensions');
+	} else { //New board is valid, replace existing with new
 		gameBoard = newBoard;
 		return this;
-	} else {
-		throw new Error();
 	}
 };
 
