@@ -35,7 +35,7 @@ exports.loadFromFile = function(fileName) {
 exports.proceedGeneration = function() {
     gameBoard = _.map(gameBoard, function(row, rowIndex) {
         return _.map(row, function(state, colIndex) {
-            return getNextNodeState(rowIndex, colIndex);
+            return _getNextNodeState(rowIndex, colIndex);
         });
     });
     return this;
@@ -53,9 +53,9 @@ exports.getBoard = function() {
     return gameBoard;
 }
 
-//Helper function which gets the next state of the node at the provided
+//Private function which gets the next state of the node at the provided
 //index based on the node's current state and its live neighbor count
-function getNextNodeState(rowIndex, colIndex) {
+var _getNextNodeState = function(rowIndex, colIndex) {
     var liveNeighborCount = 0;  
     if (gameBoard[rowIndex - 1] !== undefined) {
         if (gameBoard[rowIndex - 1][colIndex - 1]) liveNeighborCount++;  //Upper-Left
